@@ -88,7 +88,9 @@ unsafe fn decompress_raw<'a>(
             if input_end.sub_ptr(input_ptr) < lit_len || buf_end.sub_ptr(buf_ptr) < lit_len {
                 return Err(DecompressError);
             }
-            if input_end.sub_ptr(input_ptr) >= lit_len + 16 && buf_end.sub_ptr(buf_ptr) >= lit_len + 16 {
+            if input_end.sub_ptr(input_ptr) >= lit_len + 16
+                && buf_end.sub_ptr(buf_ptr) >= lit_len + 16
+            {
                 inline_memcpy_16(&mut buf_ptr, input_ptr, lit_len);
             } else {
                 buf_ptr.copy_from_nonoverlapping(input_ptr, lit_len);

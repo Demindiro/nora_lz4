@@ -8,6 +8,9 @@ version = "*"
 default-features = false
 features = ["checked-decode"]
 
+[dev-dependencies.bstr]
+version = "1.0"
+
 [profile.release]
 #lto = true
 #debug = false
