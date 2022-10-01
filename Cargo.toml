@@ -1,0 +1,14 @@
+[package]
+name = "nora_lz4"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies.lz4_flex]
+version = "*"
+default-features = false
+features = ["checked-decode"]
+
+[profile.release]
+#lto = true
+#debug = false
+debug = true
